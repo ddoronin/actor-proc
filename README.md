@@ -24,6 +24,52 @@ npm i --save actor-proc
 
 The API of actor-proc consists of two parts: a function `registerActor(actor: Actor)` to add actors in the Actor System, and `spawnActorSystem(url: string): ActorSystemProcess` to spawn the Actor System with actors inside of a dedicated worker (the url refers to the actor system javascript bundle).
 
+1. Let's register actors in `actors-system.js`:
+
+```javascript
+import { registerActor } from 'actor-proc';
+import { TicketSeller } from './TicketSeller';
+import { BoxOffice } from './BoxOffice';
+
+const TICKET_SELLER = Symbol('TicketSeller');
+const BOX_OFFICE = Symbol('BoxOffice');
+
+registerActor(new TicketSeller(TICKET_SELLER));
+registerActor(new BoxOffice(BOX_OFFICE, TICKET_SELLER));
+```
+
+This code will be run inside of a dedicated worker that should refer to `actors-system.js`.
+
+2. Let's run a dedicated worker:
+
+```javascript
+import { spawnActorSystem } from 'actor-proc';
+
+const actorSystem = spawnActorSystem('./actor-system.js');
+```
+
+Now the code is running in a web worker. The main app can communicate with actors by sending messages and listening for replies.
+
+3. Let's subscribe on messages and log them in console:
+
+```javascript
+actorSystem.listen(({ref, data}) => {
+    console.log('Received from actor', ref, data);
+});
+```
+
+where `ref` is a name of actor that replies with given data.
+
+4. Now let's send a message to the actor system. This message will be broadcasted and handled by one or more actors.
+
+```javascript
+actorSystem.send({
+    type: 'find-and-buy',
+    data: {}
+})
+```
+This message will be handled by the `BoxOffice` actor that will ask a `TicketSeller` actor to buy some tickets. The `TicketSeller` actor should reply to the initial sender, so it will be printed in console (see step #3).
+
 ## Examples
 
 Examples are available in the examples directory:
