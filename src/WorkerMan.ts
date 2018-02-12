@@ -16,7 +16,7 @@ export class WorkerMan extends ActorSystem {
     constructor(self: IWorker){
         super({
             reply(actorRef, data):void {
-                self.postMessage(data);
+                self.postMessage({ref: actorRef.toString(), data});
             },
             forward(actorRef, data):void {
                 console.debug('forward message');
