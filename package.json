@@ -1,10 +1,10 @@
 {
-  "name": "actor-system",
+  "name": "actor-proc",
   "version": "0.0.1",
   "description": "Actor pattern implementation in JavaSript.",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
-  "repository": "git@github.com:ddoronin/actor-system.git",
+  "repository": "git@github.com:ddoronin/actor-proc.git",
   "author": "<doronindm@gmail.com>",
   "license": "MIT",
   "devDependencies": {
