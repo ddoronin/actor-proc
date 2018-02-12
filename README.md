@@ -1,4 +1,4 @@
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ddoronin/actor-proc/blob/master/LICENSE) [![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/actor-proc)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ddoronin/actor-proc/blob/master/LICENSE) [![npm](https://img.shields.io/npm/v/actor-proc.svg)](https://www.npmjs.com/package/actor-proc)
 
 # actor-proc
 Actor pattern implementation in JavaScript
