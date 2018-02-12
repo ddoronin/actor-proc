@@ -1,8 +1,4 @@
-[![npm][npm]][npm-url]
-[![node][node]][node-url]
-[![deps][deps]][deps-url]
-[![tests][tests]][tests-url]
-[![coverage][cover]][cover-url]
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ddoronin/actor-proc/blob/master/LICENSE) [![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/actor-proc)
 
 # actor-system
 Actor pattern implementation in JavaScript
