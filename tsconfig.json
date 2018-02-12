@@ -2,9 +2,8 @@
     "compilerOptions":{
         "module": "commonjs",
         "noImplicitAny": true,
-        "target": "es6",
-        "sourceMap": true,
-        "isolatedModules": true
+        "target": "es2017",
+        "sourceMap": true
     },
     "include": [
         "./src/**/*"
