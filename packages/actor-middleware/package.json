@@ -1,0 +1,13 @@
+{
+  "name": "actor-middleware",
+  "version": "0.0.1",
+  "description": "Actor middleware for redux",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "repository": "git@github.com:ddoronin/actor-proc.git",
+  "author": "<doronindm@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "actor-proc": "^0.0.2"
+  }
+}

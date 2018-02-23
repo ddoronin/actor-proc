@@ -1,5 +1,5 @@
 import {expect, assert} from 'chai';
-import {spy, SinonSpy} from 'sinon'
+import {spy} from 'sinon'
 import {Actor, ISender, IMessage} from './Actor';
 import {ActorSystem} from './ActorSystem';
 

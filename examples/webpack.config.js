@@ -1,6 +1,20 @@
 const path = require('path');
 const webpack = require('webpack');
 
+class ActorProcPlugin {
+    constructor(key){
+        this.key = key;
+    }
+
+    apply(compiler) {
+        compiler.plugin("emit", function(compilation, callback) {
+            const assets = Object.keys(compilation.assets);
+            console.log(assets);
+            callback();
+        });
+    }
+}
+
 module.exports = {
     entry: {
         'actor-system': path.resolve(__dirname, './ticketMarket/actor-system.ts'),
@@ -42,6 +56,11 @@ module.exports = {
             options: {
                 context: '/'
             }
+        }),
+        new ActorProcPlugin('ASSETS'),
+
+        new webpack.DefinePlugin({
+            'GLOBAL': JSON.stringify('test'),
         })
     ]
 };

@@ -23,6 +23,6 @@ const getActorSystem = (): ActorSystem => {
 export const registerActor = (actor: Actor) => 
     getActorSystem().register(actor);
 
-export const spawnActorSystem = (url: string): ActorSystemProcess => {
-    return new ActorSystemProcess(url);
+export const spawnActorSystem = (worker: Worker|any): ActorSystemProcess => {
+    return new ActorSystemProcess(worker);
 };
